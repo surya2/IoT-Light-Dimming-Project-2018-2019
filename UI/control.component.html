@@ -1,0 +1,79 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!--<div class="row">
+  <div class="col-md-4" *ngFor="let t of tablet">
+      <div class="thumbnail tablet1">
+              <div id="text2" class="text1"><b>{{ t.caption }}</b></div>
+              <br>
+              <div id="input2" class="input-group col-xs-8">
+                  <div class="input-group-btn">
+                      <button id="{{ t.btnid }}" #downBtn (click)="down(downBtn.id)" class="btn btn-danger"><span class="glyphicon glyphicon-menu-down"></span></button>
+                  </div>
+                    <input id="{{ t.id }}" #control (keyup.enter)="onEnter(control.value, control.id)" type="number" class="form-control" placeholder="Brightness" name="quantity" min="0" max="100">
+                  <span class="input-group-addon"><i>%</i></span>   
+                  <div class="input-group-btn">
+                      <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-menu-up"></i></button>
+                  </div>
+              </div>
+      </div>
+  </div>  
+</div>-->
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let ob of objects1 | async; let i=index">
+      <div class="thumbnail tablet1">
+              <div id="text2" class="text1"><b>{{ tablet[i].caption }}</b></div>
+              <br>
+              <div *ngIf="tablet[i].dim" id="input2" class="input-group col-xs-8">
+                  <div class="input-group-btn">
+                      <button id="down" #downBtn (click)="down()" class="btn btn-danger"><span class="glyphicon glyphicon-menu-down"></span></button>
+                  </div>
+                  <!--<md-input-container>
+                    <input id="{{ t.id }}" #control (keyup.enter)="onEnter(control.value, control.id)" type="number" min="0" max="100" required mdInput placeholder="Charge" [(ngModel)]="rateInput" name="rateInput" [formControl]="rateControl">
+                    <md-error>Please enter a value between 0 and 100</md-error>
+                </md-input-container>-->
+                    <input id="center" #center (keyup.enter)="onEnter(center.value)" class="form-control" placeholder="{{ ob | json }}">
+                  <span class="input-group-addon"><i>%</i></span>   
+                  <div class="input-group-btn">
+                      <button id="up" #upBtn (click)="up()" class="btn btn-success" type="submit"><i class="glyphicon glyphicon-menu-up"></i></button>
+                  </div>
+              </div>
+      </div>
+  </div>  
+  <div id="first" class="input-group col-xs-8">
+    <button id="firstbtn" class="btn btn-{{ color1 }}" #btn (click)="onoffFirst()"><span class="glyphicon glyphicon-off"></span> &nbsp; {{ firstBtnState }}</button>
+  </div>
+  <div id="second" class="input-group col-xs-8">
+    <button id="secondbtn" class="btn btn-{{ color2 }}" #btn (click)="onoffSecond()"><span class="glyphicon glyphicon-off"></span> &nbsp; {{ secondBtnState }}</button>
+  </div>
+  <span class=""></span>
+</div>
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let o of objects | async; let i = index">
+      <div *ngIf="tablet[i].dim" class="thumbnail tablet1">
+        <h2 id="object"> &emsp;<b>{{ o | json }}%</b> <i class="glyphicon glyphicon-lamp"></i></h2>
+      </div>
+      <div *ngIf="!tablet[i].dim" class="thumbnail tablet1">
+        <h2> &emsp;<b #lamp id="{{ tablet[i].labelid }}">{{ o | json | slice:1:4 }}</b> <i class="glyphicon glyphicon-lamp"></i></h2>
+    </div>
+  </div>  
+</div>
+<div *ngIf="lowCap" id="warningLed" class="alert alert-danger">
+  <strong><span class="glyphicon glyphicon-info-sign"></span></strong> 20 is the minimum for LED bulbs
+</div>
+<!--<ul>
+  <li *ngFor="let i of items | async">
+    {{ i | json }}
+  </li>
+</ul>-->
+</body>
+

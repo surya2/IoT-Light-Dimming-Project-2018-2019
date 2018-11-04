@@ -1,0 +1,21 @@
+#text1, #text2 {
+    font-family: 'PT Sans', sans-serif;
+}
+.tablet1 {
+    padding: 15px;
+}
+#first {
+    position: absolute;
+    top: 197px;
+    left: 620px;
+}
+#second {
+    position: absolute;
+    top: 197px;
+    left: 1045px;
+}
+#warningLed {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
