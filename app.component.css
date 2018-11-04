@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+body {
+    margin: 10px;
+}
+#title {
+    width: 1320;
+    height: 90px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: burlywood;
+    text-align: left;
+}
+#navTitle{
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    font-size: 32px;
+    position: absolute;
+    top: 18px;
+    left: 25px;
+}
+#navTitle:hover{
+    font-family: 'Pacifico', cursive;
+    color: blue;
+}
+.tablet {
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#first {
+    font-size: 20px;
+    font-family: 'PT Sans', sans-serif;
+}
+#input1{
+    position: absolute;
+    top: 198px;
+    left: 145px;
+}
+#input2{
+    position: absolute;
+    top: 258px;
+    left: 145px;
+}
+#text1, #text2 {
+    font-family: 'PT Sans', sans-serif;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+#plusBtn{
+    position: absolute;
+    top: 465px;
+    left: 650px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#detailBtn{
+    position: absolute;
+    top: 128px;
+    left: 230px;
+}
