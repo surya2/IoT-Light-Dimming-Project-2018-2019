@@ -11,4 +11,4 @@ print "LED off"
 GPIO.output(18,GPIO.LOW)    #Turn the led off
 state = os.stat('logs/cronlog').st_size==0      #read error message file called cronlog
 if(state == False):                  #if cronlog's size is not equal to 0
-    GPIO.output(18,GPIO.HIGH)        #Turn the led on - this is the notification
+    GPIO.output(18,GPIO.HIGH)        #Turn the led on - this is the notification of a dat retrieval error
